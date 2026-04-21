@@ -1,94 +1,165 @@
-🚨 XSS Attack Demo (Educational Cybersecurity Project)
-📌 Project Overview
+# 🚨 XSS Attack Demo (Educational Cybersecurity Project)
 
-This project demonstrates Cross-Site Scripting (XSS) vulnerabilities and their secure mitigation techniques using practical examples.
+## 📌 Project Overview
+
+This project demonstrates **Cross-Site Scripting (XSS)** vulnerabilities and their **secure mitigation techniques** using practical examples.
 
 It is designed for:
 
-Cybersecurity learners 👨‍💻
-Ethical hacking students 🔐
-Web security training 🛡️
+* Cybersecurity learners 👨‍💻
+* Ethical hacking students 🔐
+* Web security training 🛡️
 
-The project shows:
+The project includes:
 
-🔴 Vulnerable implementation (unsafe input handling)
-🟢 Secure implementation (input sanitization & validation)
-🎯 Objectives
-Understand how XSS attacks work
-Demonstrate real-world XSS vulnerabilities
-Learn how to fix XSS using secure coding practices
-Compare vulnerable vs secure code
-🛠️ Technologies Used
-Frontend: HTML, CSS
-Backend: PHP
-Server: Python (Simple HTTP Server)
-Styling: Custom CSS
-📂 Project Structure
+* 🔴 Vulnerable implementation (unsafe input handling)
+* 🟢 Secure implementation (input sanitization & validation)
+
+---
+
+## 🎯 Objectives
+
+* Understand how XSS attacks work
+* Demonstrate real-world XSS vulnerabilities
+* Learn how to fix XSS using secure coding practices
+* Compare vulnerable vs secure code
+
+---
+
+## 🛠️ Technologies Used
+
+* **Frontend:** HTML, CSS
+* **Backend:** PHP
+* **Server:** Python (Local server)
+* **Styling:** Custom CSS
+
+---
+
+## 📂 Project Structure
+
+```
 XSS-ATTACK-DEMO/
 │
-├── index.php                # Main entry page
-├── vulnerable.php           # XSS vulnerable page
-├── secure.php               # Fixed secure version
-├── server.py                # Local server script
+├── index.php
+├── vulnerable.php
+├── secure.php
+├── server.py
 │
-├── style.css                # Main styling
-├── style-light.css          # Light theme
-├── style_backup.css         # Backup styles
+├── style.css
+├── style-light.css
+├── style_backup.css
 │
-├── README.md                # Project documentation
+├── README.md
 ├── project_handover_report.md
 │
 └── .git/
-⚠️ XSS Vulnerability Explained
-🔴 Vulnerable Code (Example)
-Accepts user input directly
-Outputs it without sanitization
+```
 
-👉 This allows attackers to inject scripts like:
+---
 
+## ⚠️ XSS Vulnerability Explained
+
+### 🔴 Vulnerable Example
+
+The vulnerable page directly reflects user input without sanitization.
+
+Example payload:
+
+```html
 <script>alert('XSS Attack')</script>
-🟢 Secure Code (Fix)
-Uses input sanitization methods:
-htmlspecialchars() in PHP
-Input validation
+```
 
-👉 Prevents execution of malicious scripts
+👉 This executes JavaScript in the browser.
 
-🚀 How to Run the Project
-Step 1: Clone Repository
+---
+
+### 🟢 Secure Implementation
+
+The secure page uses proper sanitization:
+
+```php
+htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+```
+
+👉 Prevents execution of malicious scripts.
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone Repository
+
+```
 git clone https://github.com/anandthosar03-hub/XSS-ATTACK-DEMO.git
 cd XSS-ATTACK-DEMO
-Step 2: Run Server
-Option 1: Python Server
+```
+
+---
+
+### 2. Start Server
+
+Using Python:
+
+```
 python server.py
+```
 
-OR
+OR:
 
+```
 python -m http.server 8000
-Step 3: Open in Browser
+```
+
+---
+
+### 3. Open in Browser
+
+```
 http://localhost:8000
-🧪 How to Test XSS
-Go to vulnerable page
+```
 
-Enter payload:
+---
 
+## 🧪 Testing the Attack
+
+1. Open **vulnerable.php**
+2. Enter:
+
+```
 <script>alert('XSS')</script>
-Observe popup → ❌ Vulnerable
-Go to secure page
-Enter same payload → ✅ Safe (no execution)
-🔐 Security Concepts Covered
-Cross-Site Scripting (XSS)
-Input validation
-Output encoding
-Secure coding practices
-Client-side vs server-side security
-⚖️ Disclaimer
+```
 
-This project is created strictly for educational purposes only.
+➡️ Popup appears → ❌ Vulnerable
 
-❗ Do NOT use these techniques on:
+3. Open **secure.php**
+   ➡️ Script is not executed → ✅ Secure
 
-Real websites
-Unauthorized systems
+---
 
-Unauthorized testing may be illegal.
+## 🔐 Security Concepts Covered
+
+* Cross-Site Scripting (XSS)
+* Input validation
+* Output encoding
+* Secure coding practices
+* Web application security basics
+
+---
+
+## ⚖️ Disclaimer
+
+This project is for **educational purposes only**.
+
+❗ Do NOT use on real systems without permission
+❗ Unauthorized testing is illegal
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🛠️ Contribute
+
